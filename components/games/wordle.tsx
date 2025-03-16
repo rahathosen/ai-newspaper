@@ -1,4 +1,4 @@
-""use client"
+"use client"
 
 import type React from "react"
 
@@ -282,5 +282,4 @@ const Wordle: React.FC<WordleProps> = ({ onScoreUpdate, onGameOver, isPlaying })
 }
 
 export default Wordle
-"
 
