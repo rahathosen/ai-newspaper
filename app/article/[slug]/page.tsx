@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Clock, Calendar, Bookmark, Share2, Printer, Volume2, Sparkles } from "lucide-react"
+import { Clock, Calendar, Bookmark, Share2, Printer, Volume2, Sparkles } from 'lucide-react'
 import { Advertisement } from "@/components/advertisement"
 import { SocialShareBar } from "@/components/social-share-bar"
 import { ReadingProgress } from "@/components/reading-progress"
@@ -154,7 +154,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <article id="article-content">
+            <article id="article-content" className="article-content">
               {/* Article Header */}
               <div className="mb-6">
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -179,7 +179,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="flex items-center gap-3">
                     <Avatar>
                       <AvatarImage src={article.author.avatar} alt={article.author.name} />
@@ -202,7 +202,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               </div>
 
               {/* Article Actions */}
-              <div className="flex items-center justify-between mb-6 py-3 border-y">
+              <div className="flex items-center justify-between mb-6 py-3 border-y flex-wrap gap-3">
                 <div className="flex items-center gap-2">
                   <Button variant="outline" size="sm" className="gap-1">
                     <Share2 className="h-4 w-4" />
@@ -262,7 +262,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
               {/* Article Footer */}
               <div className="border-t pt-6 mb-8">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
                     <h4 className="font-medium">{article.author.name}</h4>
                     <p className="text-sm text-muted-foreground">
@@ -313,4 +313,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   )
 }
-

@@ -141,3 +141,127 @@
   }
 }
 
+/* Article content styling */
+.article-content {
+  @apply text-base leading-relaxed;
+}
+
+.article-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-primary;
+}
+
+.article-content h3 {
+  @apply text-xl font-bold mt-6 mb-3;
+}
+
+.article-content p {
+  @apply mb-4;
+}
+
+.article-content ul, 
+.article-content ol {
+  @apply mb-6 pl-6;
+}
+
+.article-content li {
+  @apply mb-2;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-primary pl-4 py-2 my-6 bg-muted/50 italic;
+}
+
+.article-content blockquote cite {
+  @apply block text-sm text-muted-foreground not-italic mt-2;
+}
+
+.article-content a {
+  @apply text-primary underline hover:text-primary/80;
+}
+
+.article-content img {
+  @apply rounded-md my-6 mx-auto;
+}
+
+.article-content .image-caption {
+  @apply text-sm text-muted-foreground text-center mt-2;
+}
+
+/* Keyboard component styling */
+.keyboard-row {
+  @apply flex justify-center gap-1 my-1;
+}
+
+.keyboard-key {
+  @apply font-medium h-10 min-w-[30px] flex items-center justify-center rounded-md transition-colors;
+}
+
+.key-correct {
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+.key-present {
+  @apply bg-yellow-500 text-white hover:bg-yellow-600;
+}
+
+.key-absent {
+  @apply bg-gray-500 text-white hover:bg-gray-600;
+}
+
+.key-unused {
+  @apply bg-gray-200 dark:bg-gray-700;
+}
+
+.key-action {
+  @apply px-3 text-xs;
+}
+
+.key-letter {
+  @apply px-2 text-sm;
+}
+
+/* Game styling */
+.game-grid {
+  @apply grid grid-cols-4 gap-2 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-inner;
+}
+
+.game-cell {
+  @apply w-full aspect-square flex items-center justify-center rounded-md text-xl md:text-2xl font-bold shadow transition-all duration-100;
+}
+
+.game-controls {
+  @apply mt-6 grid grid-cols-3 gap-2;
+}
+
+.game-instructions {
+  @apply mt-4 text-center text-sm text-muted-foreground;
+}
+
+/* Wordle game styling */
+.wordle-grid {
+  @apply grid grid-rows-6 gap-1 mb-4;
+}
+
+.wordle-row {
+  @apply grid grid-cols-5 gap-1;
+}
+
+.wordle-cell {
+  @apply flex items-center justify-center w-full aspect-square text-xl font-bold border-2 transition-colors;
+}
+
+.wordle-cell-correct {
+  @apply bg-green-500 text-white border-green-500;
+}
+
+.wordle-cell-present {
+  @apply bg-yellow-500 text-white border-yellow-500;
+}
+
+.wordle-cell-absent {
+  @apply bg-gray-500 text-white border-gray-500;
+}
+
+.wordle-cell-unused {
+  @apply bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600;
+}
