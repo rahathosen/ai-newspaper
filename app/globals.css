@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium color palette */
+    --background: 40 30% 98%;
+    --foreground: 220 40% 12%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 220 40% 12%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 220 40% 12%;
+
+    /* Deep navy blue as primary */
+    --primary: 220 70% 22%;
+    --primary-foreground: 40 30% 98%;
+
+    /* Soft cream secondary */
+    --secondary: 40 30% 96%;
+    --secondary-foreground: 220 40% 12%;
+
+    /* Muted cream */
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 40%;
+
+    /* Subtle accent */
+    --accent: 220 20% 92%;
+    --accent-foreground: 220 70% 22%;
+
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 40 30% 98%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 70% 22%;
+
+    /* Premium accent colors */
+    --gold: 40 60% 50%;
+    --gold-foreground: 0 0% 100%;
+
+    --burgundy: 350 60% 30%;
+    --burgundy-foreground: 0 0% 100%;
+
+    --navy: 220 70% 22%;
+    --navy-foreground: 0 0% 100%;
+
+    --radius: 0.4rem;
+  }
+
+  .dark {
+    /* Premium dark mode */
+    --background: 220 40% 10%;
+    --foreground: 40 30% 96%;
+
+    --card: 220 40% 12%;
+    --card-foreground: 40 30% 96%;
+
+    --popover: 220 40% 12%;
+    --popover-foreground: 40 30% 96%;
+
+    /* Rich navy in dark mode */
+    --primary: 220 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Deep secondary */
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 40 30% 96%;
+
+    /* Muted dark */
+    --muted: 220 30% 20%;
+    --muted-foreground: 40 20% 70%;
+
+    /* Subtle accent */
+    --accent: 220 30% 20%;
+    --accent-foreground: 40 30% 96%;
+
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 40 30% 96%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 220 60% 50%;
+
+    /* Premium accent colors in dark mode */
+    --gold: 40 50% 50%;
+    --gold-foreground: 0 0% 0%;
+
+    --burgundy: 350 50% 40%;
+    --burgundy-foreground: 0 0% 100%;
+
+    --navy: 220 60% 40%;
+    --navy-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 2.5s ease-in-out;
+}
+
+/* Premium styling utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(40, 60%, 50%), hsl(36, 50%, 60%));
+  }
+
+  .premium-card {
+    @apply border border-gold/20 shadow-md;
+  }
+
+  .premium-button {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
+  }
+
+  .premium-accent {
+    @apply text-gold hover:text-gold/90;
+  }
+}
+
