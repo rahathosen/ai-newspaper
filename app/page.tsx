@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { NewsSection } from "@/components/news-section"
 import { Separator } from "@/components/ui/separator"
 import { Advertisement } from "@/components/advertisement"
-import { StickyAd } from "@/components/sticky-ad"
+// import { StickyAd } from "@/components/sticky-ad"
 import { NewsletterPopup } from "@/components/newsletter-popup"
 import { LiveNewsTicker } from "@/components/live-news-ticker"
 import { WeatherForecast } from "@/components/weather-forecast"
@@ -405,7 +405,7 @@ export default function Home() {
       <Footer />
 
       {/* Sticky Ad */}
-      <StickyAd position="bottom" delay={2000} />
+      {/* <StickyAd position="bottom" delay={2000} /> */}
 
       {/* Newsletter Popup */}
       <NewsletterPopup delay={15000} />

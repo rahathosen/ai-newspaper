@@ -203,7 +203,7 @@ export function AiSummaryDialog({ open, onOpenChange, articleTitle, articleConte
                 </div>
 
                 {/* Related Articles Section */}
-                {relatedArticles.length > 0 && (
+                {/* {relatedArticles.length > 0 && (
                   <div className="mt-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Link2 className="h-4 w-4 text-primary" />
@@ -225,7 +225,7 @@ export function AiSummaryDialog({ open, onOpenChange, articleTitle, articleConte
                       ))}
                     </div>
                   </div>
-                )}
+                )} */}
               </div>
             )}
           </div>
