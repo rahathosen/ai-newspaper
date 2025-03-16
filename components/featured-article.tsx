@@ -156,7 +156,9 @@ export function FeaturedArticle() {
             <Badge variant="outline">Environment</Badge>
           </div>
           <Button variant="link" className="px-0 mt-2">
-            Continue Reading →
+           <Link href={'/article/1'}>
+           Continue Reading →
+           </Link>
           </Button>
 
           {isAudioPlaying && <ArticleAudioPlayer onClose={() => setIsAudioPlaying(false)} />}
