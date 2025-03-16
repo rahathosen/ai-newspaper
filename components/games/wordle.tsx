@@ -1,285 +1,246 @@
-"use client"
+"use client";
 
-import type React from "react"
+import { useState, useEffect, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Keyboard } from "@/components/ui/keyboard";
+import { AlertCircle, RefreshCw } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-import { useState, useEffect, useCallback } from "react"
-import { Button } from "@/components/ui/button"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Keyboard } from "@/components/ui/keyboard"
-import { RotateCcw, AlertCircle, Check, Share2 } from 'lucide-react'
+// Fixed list of 5-letter words
+const WORDS = [
+  "REACT",
+  "WORLD",
+  "HELLO",
+  "GAMES",
+  "PAPER",
+  "MUSIC",
+  "WATER",
+  "EARTH",
+  "LIGHT",
+  "PHONE",
+  "SMART",
+  "QUICK",
+  "JUMPS",
+  "BRAVE",
+  "FOCUS",
+  "POWER",
+  "LEARN",
+  "THINK",
+  "DREAM",
+  "HAPPY",
+];
 
-interface WordleProps {
-  onScoreUpdate: (score: number) => void
-  onGameOver: () => void
-  isPlaying: boolean
+type LetterState = "correct" | "present" | "absent" | "unused";
+
+interface KeyboardState {
+  [key: string]: LetterState;
 }
 
-type LetterState = "correct" | "present" | "absent" | "empty"
+export default function Wordle() {
+  const [targetWord, setTargetWord] = useState<string>("");
+  const [guesses, setGuesses] = useState<string[]>(Array(6).fill(""));
+  const [currentGuess, setCurrentGuess] = useState<number>(0);
+  const [currentInput, setCurrentInput] = useState<string>("");
+  const [keyboardState, setKeyboardState] = useState<KeyboardState>({});
+  const [gameStatus, setGameStatus] = useState<"playing" | "won" | "lost">(
+    "playing"
+  );
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [alertMessage, setAlertMessage] = useState<string>("");
 
-interface LetterResult {
-  letter: string
-  state: LetterState
-}
-
-const WORD_LENGTH = 5
-const MAX_ATTEMPTS = 6
-
-const Wordle: React.FC<WordleProps> = ({ onScoreUpdate, onGameOver, isPlaying }) => {
-  const [targetWord, setTargetWord] = useState<string>("")
-  const [attempts, setAttempts] = useState<string[]>([])
-  const [currentAttempt, setCurrentAttempt] = useState<string>("")
-  const [gameState, setGameState<"playing" | "won" | "lost">>(("playing"))
-  const [letterStates, setLetterStates] = useState<Record<string, LetterState>>({})
-  const [message, setMessage] = useState<string | null>(null)
-  const [shake, setShake] = useState<number | null>(null)
-  const [reveal, setReveal] = useState<number | null>(null)
-  const [dictionary, setDictionary] = useState<string[]>([])
-
-  // Word list - in a real app, this would be loaded from an API or larger file
-  const wordList = [
-    "apple",
-    "beach",
-    "chair",
-    "dance",
-    "eagle",
-    "flame",
-    "globe",
-    "house",
-    "image",
-    "juice",
-    "knife",
-    "lemon",
-    "music",
-    "night",
-    "ocean",
-    "piano",
-    "queen",
-    "river",
-    "sugar",
-    "table",
-    "unity",
-    "video",
-    "water",
-    "youth",
-    "zebra",
-    "bread",
-    "cloud",
-    "dream",
-    "earth",
-    "focus",
-    "green",
-    "heart",
-    "ivory",
-    "jewel",
-    "kiosk",
-    "light",
-    "money",
-    "north",
-    "olive",
-    "power",
-    "quiet",
-    "radio",
-    "storm",
-    "tiger",
-    "urban",
-    "value",
-    "world",
-    "xylophone",
-  ]
-
-  // Valid guesses - in a real app, this would be a much larger list
-  const validGuesses = [
-    ...wordList,
-    "about",
-    "above",
-    "abuse",
-    "actor",
-    "adapt",
-    "admit",
-    "adopt",
-    "adult",
-    "after",
-    "again",
-    "agent",
-  ]
-
-  const initializeGame = useCallback(() => {
-    const randomWord = wordList[Math.floor(Math.random() * wordList.length)]
-    setTargetWord(randomWord.toUpperCase())
-    setAttempts([])
-    setCurrentAttempt("")
-    setGameState("playing")
-    setLetterStates({})
-    setMessage(null)
-    setShake(null)
-    setReveal(null)
-    onScoreUpdate(0)
-  }, [wordList, onScoreUpdate])
-
+  // Initialize game
   useEffect(() => {
-    if (isPlaying) {
-      initializeGame()
-    }
-  }, [isPlaying, initializeGame])
+    startNewGame();
+  }, []);
 
-  const checkGuess = useCallback(
-    (guess: string) => {
-      const newLetterStates: Record<string, LetterState> = { ...letterStates }
-      let allCorrect = true
+  const startNewGame = () => {
+    const randomIndex = Math.floor(Math.random() * WORDS.length);
+    setTargetWord(WORDS[randomIndex]);
+    setGuesses(Array(6).fill(""));
+    setCurrentGuess(0);
+    setCurrentInput("");
+    setKeyboardState({});
+    setGameStatus("playing");
+    setShowAlert(false);
+  };
 
-      const results: LetterResult[] = [...guess].map((letter, index) => {
-        const correctLetter = targetWord[index]
-        let state: LetterState = "absent"
+  const handleKeyPress = useCallback(
+    (key: string) => {
+      if (gameStatus !== "playing") return;
 
-        if (letter === correctLetter) {
-          state = "correct"
-        } else if (targetWord.includes(letter)) {
-          state = "present"
-          allCorrect = false
-        } else {
-          allCorrect = false
+      if (key === "ENTER") {
+        if (currentInput.length !== 5) {
+          setAlertMessage("Word must be 5 letters");
+          setShowAlert(true);
+          setTimeout(() => setShowAlert(false), 2000);
+          return;
         }
 
-        newLetterStates[letter] = state
-        return { letter, state }
-      })
+        // Check if word is valid (in a real game, you'd check against a dictionary)
+        // For this demo, we'll accept any 5-letter combination
 
-      setLetterStates(newLetterStates)
-      return { results, allCorrect }
+        // Update guesses
+        const newGuesses = [...guesses];
+        newGuesses[currentGuess] = currentInput;
+        setGuesses(newGuesses);
+
+        // Update keyboard state
+        const newKeyboardState = { ...keyboardState };
+        for (let i = 0; i < 5; i++) {
+          const letter = currentInput[i];
+          if (!letter) continue;
+
+          if (letter === targetWord[i]) {
+            newKeyboardState[letter] = "correct";
+          } else if (
+            targetWord.includes(letter) &&
+            newKeyboardState[letter] !== "correct"
+          ) {
+            newKeyboardState[letter] = "present";
+          } else if (
+            newKeyboardState[letter] !== "correct" &&
+            newKeyboardState[letter] !== "present"
+          ) {
+            newKeyboardState[letter] = "absent";
+          }
+        }
+        setKeyboardState(newKeyboardState);
+
+        // Check win condition
+        if (currentInput === targetWord) {
+          setGameStatus("won");
+          setAlertMessage("Congratulations! You won!");
+          setShowAlert(true);
+          setTimeout(() => setShowAlert(false), 3000);
+          return;
+        }
+
+        // Move to next guess or end game
+        if (currentGuess === 5) {
+          setGameStatus("lost");
+          setAlertMessage(`Game over! The word was ${targetWord}`);
+          setShowAlert(true);
+          setTimeout(() => setShowAlert(false), 3000);
+        } else {
+          setCurrentGuess(currentGuess + 1);
+          setCurrentInput("");
+        }
+      } else if (key === "BACKSPACE") {
+        setCurrentInput((prev) => prev.slice(0, -1));
+      } else if (/^[A-Z]$/.test(key) && currentInput.length < 5) {
+        setCurrentInput((prev) => prev + key);
+      }
     },
-    [targetWord, letterStates],
-  )
+    [currentGuess, currentInput, gameStatus, guesses, keyboardState, targetWord]
+  );
 
-  const handleKeyPress = (key: string) => {
-    if (gameState !== "playing") return
-
-    if (key === "Enter") {
-      if (currentAttempt.length !== WORD_LENGTH) {
-        setMessage("Not enough letters")
-        setShake(Date.now())
-        setTimeout(() => setMessage(null), 2000)
-        return
+  // Handle physical keyboard input
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        handleKeyPress("ENTER");
+      } else if (e.key === "Backspace") {
+        handleKeyPress("BACKSPACE");
+      } else if (/^[a-zA-Z]$/.test(e.key)) {
+        handleKeyPress(e.key.toUpperCase());
       }
+    };
 
-      if (!validGuesses.includes(currentAttempt.toLowerCase())) {
-        setMessage("Not in word list")
-        setShake(Date.now())
-        setTimeout(() => setMessage(null), 2000)
-        return
-      }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyPress]);
 
-      const { results, allCorrect } = checkGuess(currentAttempt)
+  // Get letter state for grid display
+  const getLetterState = (
+    guessIndex: number,
+    letterIndex: number
+  ): LetterState => {
+    if (guessIndex > currentGuess || guesses[guessIndex] === "")
+      return "unused";
 
-      setAttempts((prev) => [...prev, currentAttempt])
-      setCurrentAttempt("")
+    const letter = String(guesses[guessIndex][letterIndex] || "").toUpperCase();
+    if (!letter) return "unused";
 
-      if (allCorrect) {
-        setGameState("won")
-        const newScore = calculateScore(attempts.length + 1)
-        onScoreUpdate(newScore)
-        onGameOver()
-      } else if (attempts.length + 1 === MAX_ATTEMPTS) {
-        setGameState("lost")
-        onScoreUpdate(0)
-        onGameOver()
-      }
-    } else if (key === "Backspace") {
-      setCurrentAttempt((prev) => prev.slice(0, -1))
-    } else if (currentAttempt.length < WORD_LENGTH && /^[a-zA-Z]$/.test(key)) {
-      setCurrentAttempt((prev) => prev + key.toUpperCase())
-    }
-  }
-
-  const calculateScore = (attempts: number) => {
-    return 1000 - attempts * 100
-  }
-
-  const getLetterState = (letter: string, attemptIndex: number): LetterState => {
-    const attempt = attempts[attemptIndex]
-    if (!attempt) return "empty"
-
-    const letterIndex = attempt.indexOf(letter)
-    if (letterIndex === -1) return "empty"
-
-    return letterStates[letter] || "empty"
-  }
-
-  const renderBoard = () => {
-    const board = []
-    for (let i = 0; i < MAX_ATTEMPTS; i++) {
-      const attempt = attempts[i] || currentAttempt.padEnd(WORD_LENGTH, "")
-      const isCurrentAttempt = i === attempts.length && gameState === "playing"
-
-      const row = (
-        <div key={i} className="flex justify-center gap-1">
-          {[...attempt].map((letter, j) => {
-            let state: LetterState = "empty"
-            if (i < attempts.length) {
-              state = getLetterState(letter, i)
-            }
-
-            return (
-              <div
-                key={`${i}-${j}`}
-                className={`w-12 h-12 flex items-center justify-center text-2xl font-bold border-2 rounded-md transition-colors duration-300 ${
-                  state === "correct"
-                    ? "bg-green-500 text-white border-none"
-                    : state === "present"
-                      ? "bg-amber-500 text-white border-none"
-                      : state === "absent"
-                        ? "bg-gray-400 text-white border-none dark:bg-gray-600"
-                        : isCurrentAttempt && shake === null
-                          ? "border-gray-300 dark:border-gray-700"
-                          : "border-gray-300 dark:border-gray-700"
-                }`}
-              >
-                {letter}
-              </div>
-            )
-          })}
-        </div>
-      )
-      board.push(row)
-    }
-    return board
-  }
+    if (letter === targetWord[letterIndex]) return "correct";
+    if (targetWord.includes(letter)) return "present";
+    return "absent";
+  };
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      {message && (
-        <Alert className="mb-4">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>{message}</AlertDescription>
-        </Alert>
-      )}
-
-      <div className="space-y-2">{renderBoard()}</div>
-
-      {gameState !== "playing" && (
-        <div className="mt-6 p-4 bg-primary/5 rounded-lg text-center">
-          {gameState === "won" ? (
-            <>
-              <Check className="h-6 w-6 mx-auto text-green-500 mb-2" />
-              <h3 className="text-xl font-bold text-green-600">Congratulations! You guessed the word!</h3>
-              <p className="text-muted-foreground">Score: {calculateScore(attempts.length)}</p>
-            </>
-          ) : (
-            <>
-              <AlertCircle className="h-6 w-6 mx-auto text-red-500 mb-2" />
-              <h3 className="text-xl font-bold text-red-600">You ran out of attempts!</h3>
-              <p className="text-muted-foreground">The word was: {targetWord}</p>
-            </>
-          )}
-          <Button onClick={initializeGame} className="mt-4">
-            <RotateCcw className="h-4 w-4 mr-2" /> Play Again
+    <Card className="w-full max-w-md mx-auto">
+      <CardHeader className="pb-2">
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-2xl font-bold text-navy">Wordle</CardTitle>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={startNewGame}
+            className="text-navy hover:text-burgundy"
+          >
+            <RefreshCw className="h-5 w-5" />
           </Button>
         </div>
-      )}
+      </CardHeader>
+      <CardContent>
+        {/* Game grid */}
+        <div className="grid grid-rows-6 gap-1 mb-4">
+          {Array.from({ length: 6 }).map((_, rowIndex) => (
+            <div key={rowIndex} className="grid grid-cols-5 gap-1">
+              {Array.from({ length: 5 }).map((_, colIndex) => {
+                const letter =
+                  rowIndex === currentGuess
+                    ? currentInput[colIndex] || ""
+                    : (guesses[rowIndex] || "")[colIndex] || "";
 
-      <Keyboard onKeyPress={handleKeyPress} letterStates={letterStates} />
-    </div>
-  )
+                const state =
+                  rowIndex === currentGuess &&
+                  letter &&
+                  gameStatus === "playing"
+                    ? "unused"
+                    : getLetterState(rowIndex, colIndex);
+
+                const stateClasses = {
+                  correct: "bg-green-500 text-white border-green-500",
+                  present: "bg-yellow-500 text-white border-yellow-500",
+                  absent: "bg-gray-500 text-white border-gray-500",
+                  unused:
+                    "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600",
+                };
+
+                return (
+                  <div
+                    key={colIndex}
+                    className={`flex items-center justify-center w-full aspect-square text-xl font-bold border-2 ${stateClasses[state]} transition-colors`}
+                  >
+                    {letter}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+
+        {/* Virtual keyboard */}
+        <Keyboard onKeyPress={handleKeyPress} keyState={keyboardState} />
+
+        {/* Alert message */}
+        {showAlert && (
+          <div className="mt-4">
+            <Alert variant={gameStatus === "won" ? "default" : "destructive"}>
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>
+                {gameStatus === "won"
+                  ? "Success!"
+                  : gameStatus === "lost"
+                  ? "Game Over"
+                  : "Notice"}
+              </AlertTitle>
+              <AlertDescription>{alertMessage}</AlertDescription>
+            </Alert>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
 }
-
-export default Wordle
-
