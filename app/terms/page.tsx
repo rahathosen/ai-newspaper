@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | The Daily Chronicle",
-  description: "Terms of Service for The Daily Chronicle website and services.",
+  title: "Terms of Service | The Daily Summary",
+  description: "Terms of Service for The Daily Summary website and services.",
 }
 
 export default function TermsPage() {
@@ -14,7 +14,7 @@ export default function TermsPage() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-foreground/90 mb-6">
-            Welcome to The Daily Chronicle. These Terms of Service ("Terms") govern your access to and use of The Daily
+            Welcome to The Daily Summary. These Terms of Service ("Terms") govern your access to and use of The Daily
             Chronicle website, mobile applications, and services (collectively, the "Services"). By accessing or using
             our Services, you agree to be bound by these Terms.
           </p>
@@ -49,7 +49,7 @@ export default function TermsPage() {
           <h2 className="font-serif text-2xl font-bold text-primary mt-8 mb-4">5. Content and Intellectual Property</h2>
           <p className="text-foreground/90 mb-6">
             All content included in or made available through our Services, such as text, graphics, logos, images, audio
-            clips, video clips, and data compilations, is the property of The Daily Chronicle or its licensors and is
+            clips, video clips, and data compilations, is the property of The Daily Summary or its licensors and is
             protected by copyright, trademark, and other intellectual property laws.
           </p>
           <p className="text-foreground/90 mb-6">

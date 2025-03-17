@@ -7,8 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contact Us | The Daily Chronicle",
-  description: "Get in touch with The Daily Chronicle team for inquiries, feedback, or support.",
+  title: "Contact Us | The Daily Summary",
+  description: "Get in touch with The Daily Summary team for inquiries, feedback, or support.",
 }
 
 export default function ContactPage() {

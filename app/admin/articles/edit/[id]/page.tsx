@@ -371,7 +371,7 @@ export default function EditArticlePage() {
                   <Label htmlFor="seoTitle">SEO Title</Label>
                   <Input
                     id="seoTitle"
-                    defaultValue="Global Climate Summit: Leaders Pledge Ambitious Goals | The Daily Chronicle"
+                    defaultValue="Global Climate Summit: Leaders Pledge Ambitious Goals | The Daily Summary"
                   />
                 </div>
 

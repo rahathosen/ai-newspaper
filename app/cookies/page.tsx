@@ -3,8 +3,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | The Daily Chronicle",
-  description: "Cookie Policy for The Daily Chronicle website and services.",
+  title: "Cookie Policy | The Daily Summary",
+  description: "Cookie Policy for The Daily Summary website and services.",
 }
 
 export default function CookiePolicyPage() {
@@ -16,7 +16,7 @@ export default function CookiePolicyPage() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-foreground/90 mb-6">
-            This Cookie Policy explains how The Daily Chronicle ("we", "us", or "our") uses cookies and similar
+            This Cookie Policy explains how The Daily Summary ("we", "us", or "our") uses cookies and similar
             technologies to recognize you when you visit our website and use our services. It explains what these
             technologies are and why we use them, as well as your rights to control our use of them.
           </p>
@@ -28,7 +28,7 @@ export default function CookiePolicyPage() {
             as well as to provide reporting information.
           </p>
           <p className="text-foreground/90 mb-6">
-            Cookies set by the website owner (in this case, The Daily Chronicle) are called "first-party cookies".
+            Cookies set by the website owner (in this case, The Daily Summary) are called "first-party cookies".
             Cookies set by parties other than the website owner are called "third-party cookies". Third-party cookies
             enable third-party features or functionality to be provided on or through the website (e.g., advertising,
             interactive content, and analytics). The parties that set these third-party cookies can recognize your
@@ -269,7 +269,7 @@ export default function CookiePolicyPage() {
             privacy@dailychronicle.com or contact us at:
           </p>
           <p className="text-foreground/90 mb-6">
-            The Daily Chronicle
+            The Daily Summary
             <br />
             Attn: Privacy Officer
             <br />

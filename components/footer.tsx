@@ -12,7 +12,7 @@ export function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="font-serif text-lg font-bold mb-4">The Daily Chronicle</h4>
+            <h4 className="font-serif text-lg font-bold mb-4">The Daily Summary</h4>
             <p className="text-sm text-muted-foreground">
               Delivering trusted journalism and insightful analysis since 1982.
             </p>
@@ -46,7 +46,7 @@ export function Footer() {
           />
         </div>
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} The Daily Chronicle. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} The Daily Summary. All rights reserved.</p>
         </div>
       </div>
     </footer>

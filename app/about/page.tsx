@@ -3,20 +3,20 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
 export const metadata: Metadata = {
-  title: "About Us | The Daily Chronicle",
-  description: "Learn about The Daily Chronicle's history, mission, and the team behind our journalism.",
+  title: "About Us | The Daily Summary",
+  description: "Learn about The Daily Summary's history, mission, and the team behind our journalism.",
 }
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary">About The Daily Chronicle</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary">About The Daily Summary</h1>
 
         <div className="relative w-full h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden">
           <Image
             src="/placeholder.svg?height=800&width=1200"
-            alt="The Daily Chronicle headquarters"
+            alt="The Daily Summary headquarters"
             fill
             className="object-cover"
           />
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="prose prose-lg max-w-none">
           <h2 className="font-serif text-2xl font-bold text-primary mt-8 mb-4">Our Mission</h2>
           <p className="text-foreground/90 mb-6">
-            Founded in 1982, The Daily Chronicle is committed to delivering accurate, unbiased, and insightful
+            Founded in 1982, The Daily Summary is committed to delivering accurate, unbiased, and insightful
             journalism to our readers. We believe in the power of information to enlighten, educate, and empower
             communities. Our mission is to uphold the highest standards of journalistic integrity while adapting to the
             evolving media landscape.
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
           <h2 className="font-serif text-2xl font-bold text-primary mt-8 mb-4">Our History</h2>
           <p className="text-foreground/90 mb-6">
-            The Daily Chronicle began as a small local newspaper and has grown into a respected national publication.
+            The Daily Summary began as a small local newspaper and has grown into a respected national publication.
             Through decades of political changes, technological revolutions, and social transformations, we have
             remained a constant source of reliable information for our readers.
           </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
           <h2 className="font-serif text-2xl font-bold text-primary mt-8 mb-4">Awards & Recognition</h2>
           <p className="text-foreground/90 mb-6">
-            The Daily Chronicle has been recognized with numerous awards for excellence in journalism, including:
+            The Daily Summary has been recognized with numerous awards for excellence in journalism, including:
           </p>
           <ul className="list-disc pl-6 mb-8 space-y-2 text-foreground/90">
             <li>National Journalism Award for Investigative Reporting (2022)</li>

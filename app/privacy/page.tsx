@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | The Daily Chronicle",
-  description: "Privacy Policy for The Daily Chronicle website and services.",
+  title: "Privacy Policy | The Daily Summary",
+  description: "Privacy Policy for The Daily Summary website and services.",
 }
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-foreground/90 mb-6">
-            At The Daily Chronicle, we take your privacy seriously. This Privacy Policy explains how we collect, use,
+            At The Daily Summary, we take your privacy seriously. This Privacy Policy explains how we collect, use,
             disclose, and safeguard your information when you visit our website, mobile application, and use our
             services.
           </p>
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
             <li>Monitor and analyze trends, usage, and activities in connection with our Services</li>
             <li>
               Detect, investigate, and prevent fraudulent transactions and other illegal activities and protect the
-              rights and property of The Daily Chronicle and others
+              rights and property of The Daily Summary and others
             </li>
             <li>
               Personalize and improve the Services and provide content or features that match user profiles or interests
@@ -103,14 +103,14 @@ export default function PrivacyPage() {
             </li>
             <li>
               If we believe your actions are inconsistent with our user agreements or policies, or to protect the
-              rights, property, and safety of The Daily Chronicle or others
+              rights, property, and safety of The Daily Summary or others
             </li>
             <li>
               In connection with, or during negotiations of, any merger, sale of company assets, financing, or
               acquisition of all or a portion of our business by another company
             </li>
             <li>
-              Between and among The Daily Chronicle and our current and future parents, affiliates, subsidiaries, and
+              Between and among The Daily Summary and our current and future parents, affiliates, subsidiaries, and
               other companies under common control and ownership
             </li>
             <li>With your consent or at your direction</li>
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
             in mobile applications. These entities may use cookies, web beacons, device identifiers, and other
             technologies to collect information about your use of our Services and other websites and applications,
             including your IP address, web browser, mobile network information, pages viewed, time spent on pages or in
-            apps, links clicked, and conversion information. This information may be used by The Daily Chronicle and
+            apps, links clicked, and conversion information. This information may be used by The Daily Summary and
             others to, among other things, analyze and track data, determine the popularity of certain content, deliver
             advertising and content targeted to your interests on our Services and other websites, and better understand
             your online activity.
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
 
           <h2 className="font-serif text-2xl font-bold text-primary mt-8 mb-4">6. Data Transfer</h2>
           <p className="text-foreground/90 mb-6">
-            The Daily Chronicle is based in the United States and the information we collect is governed by U.S. law. By
+            The Daily Summary is based in the United States and the information we collect is governed by U.S. law. By
             accessing or using our Services or otherwise providing information to us, you consent to the processing,
             transfer, and storage of information in and to the U.S. and other countries, where you may not have the same
             rights and protections as you do under local law.
@@ -165,7 +165,7 @@ export default function PrivacyPage() {
 
           <h3 className="font-serif text-xl font-bold text-primary mt-6 mb-3">Promotional Communications</h3>
           <p className="text-foreground/90 mb-6">
-            You may opt out of receiving promotional emails from The Daily Chronicle by following the instructions in
+            You may opt out of receiving promotional emails from The Daily Summary by following the instructions in
             those emails. If you opt out, we may still send you non-promotional emails, such as those about your account
             or our ongoing business relations.
           </p>
@@ -202,7 +202,7 @@ export default function PrivacyPage() {
             If you have any questions about this Privacy Policy, please contact us at:
           </p>
           <p className="text-foreground/90 mb-6">
-            The Daily Chronicle
+            The Daily Summary
             <br />
             Attn: Privacy Officer
             <br />

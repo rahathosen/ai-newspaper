@@ -258,7 +258,7 @@ export function Header() {
         <div className="fixed top-0 left-0 right-0 z-50 bg-background border-b shadow-md py-2">
           <div className="container mx-auto px-4 flex items-center justify-between">
             <Link href="/" className="font-serif text-xl font-bold">
-              The Daily Chronicle
+              The Daily Summary
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-4">
@@ -325,7 +325,7 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
                   <div className="py-4">
-                    <h2 className="font-serif text-xl font-bold mb-4">The Daily Chronicle</h2>
+                    <h2 className="font-serif text-xl font-bold mb-4">The Daily Summary</h2>
                     <div className="space-y-4">
                       <Accordion type="single" collapsible className="w-full">
                         {mainNavItems.map((section) => (
@@ -372,7 +372,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
                 <div className="py-4">
-                  <h2 className="font-serif text-xl font-bold mb-4">The Daily Chronicle</h2>
+                  <h2 className="font-serif text-xl font-bold mb-4">The Daily Summary</h2>
                   <div className="space-y-4">
                     <Accordion type="single" collapsible className="w-full">
                       {mainNavItems.map((section) => (
@@ -444,7 +444,7 @@ export function Header() {
 
       {/* Masthead */}
       <div className="container mx-auto px-4 py-6 text-center">
-        <h1 className="font-serif text-4xl md:text-6xl font-bold tracking-tight">The Daily Chronicle</h1>
+        <h1 className="font-serif text-4xl md:text-6xl font-bold tracking-tight">The Daily Summary</h1>
         <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
           <CalendarDays className="h-4 w-4" />
           <span>{currentDate}</span>

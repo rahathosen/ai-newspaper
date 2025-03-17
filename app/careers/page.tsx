@@ -7,8 +7,8 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Users, Briefcase, GraduationCap, MapPin } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Careers | The Daily Chronicle",
-  description: "Join our team at The Daily Chronicle and be part of shaping the future of journalism.",
+  title: "Careers | The Daily Summary",
+  description: "Join our team at The Daily Summary and be part of shaping the future of journalism.",
 }
 
 export default function CareersPage() {
@@ -25,7 +25,7 @@ export default function CareersPage() {
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-12">
           <Image
             src="/placeholder.svg?height=800&width=1600"
-            alt="The Daily Chronicle team"
+            alt="The Daily Summary team"
             fill
             className="object-cover"
           />
@@ -33,7 +33,7 @@ export default function CareersPage() {
             <div className="p-8">
               <h2 className="font-serif text-3xl font-bold text-white mb-2">Shape the Future of Journalism</h2>
               <p className="text-white/90 max-w-2xl">
-                At The Daily Chronicle, we're reimagining how news is created, delivered, and experienced.
+                At The Daily Summary, we're reimagining how news is created, delivered, and experienced.
               </p>
             </div>
           </div>
@@ -353,7 +353,7 @@ export default function CareersPage() {
           <div className="text-center mb-8">
             <h2 className="font-serif text-3xl font-bold text-primary mb-4">Diversity & Inclusion</h2>
             <p className="text-foreground/80 max-w-3xl mx-auto">
-              The Daily Chronicle is committed to building a diverse and inclusive workplace. We believe that bringing
+              The Daily Summary is committed to building a diverse and inclusive workplace. We believe that bringing
               together different perspectives strengthens our journalism and our organization.
             </p>
           </div>

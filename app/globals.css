@@ -265,3 +265,7 @@
 .wordle-cell-unused {
   @apply bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600;
 }
+
+.game-cell {
+  transition: transform 0.2s ease-in-out;
+}

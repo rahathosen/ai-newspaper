@@ -80,7 +80,7 @@ export function CommentSection() {
         avatar: "/placeholder.svg?height=40&width=40&text=ET",
       },
       content:
-        "Great reporting as always. The Daily Chronicle continues to provide the most comprehensive coverage of these complex issues.",
+        "Great reporting as always. The Daily Summary continues to provide the most comprehensive coverage of these complex issues.",
       timestamp: "5 hours ago",
       likes: 19,
       dislikes: 1,

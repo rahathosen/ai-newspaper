@@ -1,22 +1,22 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight, RefreshCw } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface Game2048Props {
-  onScoreUpdate: (score: number) => void
-  onGameOver: () => void
-  isPlaying: boolean
+  onScoreUpdate?: (score: number) => void
+  onGameOver?: () => void
+  isPlaying?: boolean
 }
 
 type Cell = number | null
 type Grid = Cell[][]
 
-const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlaying }) => {
-  const [grid, setGrid] = useState<Grid>([])
+const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlaying = true }) => {
+  const [grid, setGrid] = useState<Grid>(Array(4).fill(null).map(() => Array(4).fill(null)))
   const [score, setScore] = useState(0)
   const [gameOver, setGameOver] = useState(false)
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null)
@@ -26,12 +26,15 @@ const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlayin
     const newGrid: Grid = Array(4)
       .fill(null)
       .map(() => Array(4).fill(null))
+
+    // Add exactly two initial tiles
     addRandomTile(newGrid)
     addRandomTile(newGrid)
+
     setGrid(newGrid)
     setScore(0)
     setGameOver(false)
-    onScoreUpdate(0)
+    if (onScoreUpdate) onScoreUpdate(0)
   }, [onScoreUpdate])
 
   useEffect(() => {
@@ -114,7 +117,7 @@ const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlayin
   }
 
   const moveGrid = (direction: "up" | "down" | "left" | "right") => {
-    if (gameOver) return
+    if (gameOver || !isPlaying) return
 
     const newGrid = JSON.parse(JSON.stringify(grid))
     let moved = false
@@ -193,11 +196,11 @@ const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlayin
       addRandomTile(newGrid)
       setGrid(newGrid)
       setScore(newScore)
-      onScoreUpdate(newScore)
+      if (onScoreUpdate) onScoreUpdate(newScore)
 
       if (checkGameOver(newGrid)) {
         setGameOver(true)
-        onGameOver()
+        if (onGameOver) onGameOver()
       }
     }
   }
@@ -268,48 +271,64 @@ const Game2048: React.FC<Game2048Props> = ({ onScoreUpdate, onGameOver, isPlayin
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <div
-        className="grid grid-cols-4 gap-2 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-inner"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {grid.map((row, i) =>
-          row.map((cell, j) => (
-            <div
-              key={`${i}-${j}`}
-              className={`w-full aspect-square flex items-center justify-center rounded-md text-xl md:text-2xl font-bold shadow transition-all duration-100 ${getCellColor(cell)}`}
-            >
-              {cell}
-            </div>
-          )),
-        )}
-      </div>
+    <Card className="w-full max-w-md mx-auto">
+      <CardHeader className="pb-2">
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-2xl font-bold text-navy">2048</CardTitle>
+          <div className="flex items-center gap-2">
+            <div className="text-sm font-medium">Score: {score}</div>
+            <Button variant="ghost" size="icon" onClick={initializeGrid} className="text-navy hover:text-burgundy">
+              <RefreshCw className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div
+          className="game-grid grid grid-cols-4 gap-2 p-2 bg-gray-300 dark:bg-gray-800 rounded-lg"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {grid.map((row, i) =>
+            row.map((cell, j) => (
+              <div
+                key={`${i}-${j}`}
+                className={`game-cell w-20 h-20 flex items-center justify-center rounded-lg text-2xl font-bold ${getCellColor(cell)}`}
+              >
+                {cell}
+              </div>
+            ))
+          )}
+        </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-2">
-        <div className="col-start-2">
+        <div className="mt-4 grid grid-cols-3 gap-2">
           <Button variant="outline" className="w-full" onClick={moveUp} disabled={gameOver || !isPlaying}>
             <ArrowUp className="h-5 w-5" />
           </Button>
-        </div>
-        <div className="col-start-1 col-end-4 grid grid-cols-3 gap-2">
           <Button variant="outline" className="w-full" onClick={moveLeft} disabled={gameOver || !isPlaying}>
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <Button variant="outline" className="w-full" onClick={moveDown} disabled={gameOver || !isPlaying}>
             <ArrowDown className="h-5 w-5" />
           </Button>
-          <Button variant="outline" className="w-full" onClick={moveRight} disabled={gameOver || !isPlaying}>
+          <Button variant="outline" className="w-full col-span-3" onClick={moveRight} disabled={gameOver || !isPlaying}>
             <ArrowRight className="h-5 w-5" />
           </Button>
         </div>
-      </div>
 
-      <div className="mt-4 text-center text-sm text-muted-foreground">Swipe or use arrow keys to move tiles</div>
-    </div>
+        {gameOver && (
+          <div className="mt-4 p-3 bg-primary/10 rounded-md text-center">
+            <h3 className="font-bold text-lg">Game Over!</h3>
+            <p className="text-muted-foreground">Final score: {score}</p>
+            <Button onClick={initializeGrid} className="mt-2">
+              Play Again
+            </Button>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   )
 }
 
 export default Game2048
-

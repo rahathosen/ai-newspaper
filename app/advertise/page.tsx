@@ -6,8 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, Users, BarChart, Globe, Target } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Advertise With Us | The Daily Chronicle",
-  description: "Reach our engaged audience through advertising opportunities with The Daily Chronicle.",
+  title: "Advertise With Us | The Daily Summary",
+  description: "Reach our engaged audience through advertising opportunities with The Daily Summary.",
 }
 
 export default function AdvertisePage() {
@@ -24,7 +24,7 @@ export default function AdvertisePage() {
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-12">
           <Image
             src="/placeholder.svg?height=800&width=1600"
-            alt="Advertising with The Daily Chronicle"
+            alt="Advertising with The Daily Summary"
             fill
             className="object-cover"
           />

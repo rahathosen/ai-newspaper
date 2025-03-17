@@ -4,8 +4,8 @@ import { AdminSidebar } from "@/components/admin/admin-sidebar"
 import { AdminHeader } from "@/components/admin/admin-header"
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard - The Daily Chronicle",
-  description: "Admin dashboard for The Daily Chronicle newspaper",
+  title: "Admin Dashboard - The Daily Summary",
+  description: "Admin dashboard for The Daily Summary newspaper",
 }
 
 export default function AdminLayout({

@@ -30,7 +30,7 @@ export default function SettingsPage() {
             <CardContent className="space-y-4">
               <div className="grid gap-2">
                 <Label htmlFor="site-name">Site Name</Label>
-                <Input id="site-name" defaultValue="The Daily Chronicle" />
+                <Input id="site-name" defaultValue="The Daily Summary" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="site-description">Site Description</Label>
