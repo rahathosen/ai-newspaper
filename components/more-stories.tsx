@@ -54,7 +54,7 @@ export function MoreStories() {
             <article key={article.id} className="space-y-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-md">
                 <img
-                  src={`/placeholder.svg?height=300&width=400&text=Article ${article.id}`}
+                  src={`/thumbnail.webp?height=300&width=400&text=Article ${article.id}`}
                   alt={article.title}
                   className="object-cover w-full h-full"
                 />

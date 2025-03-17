@@ -350,7 +350,7 @@ export default function EditArticlePage() {
               <div className="space-y-4">
                 <div className="border rounded-md overflow-hidden">
                   <img
-                    src="/placeholder.svg?height=600&width=1200&text=Climate+Summit"
+                    src="/thumbnail.webp?height=600&width=1200&text=Climate+Summit"
                     alt="Featured image"
                     className="w-full h-auto"
                   />

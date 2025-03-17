@@ -162,7 +162,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
           category: "Technology",
           relevance: 92,
           date: "Yesterday",
-          image: "/placeholder.svg?height=100&width=150&text=Carbon+Capture",
+          image: "/thumbnail.webp?height=100&width=150&text=Carbon+Capture",
         },
         {
           id: 2,
@@ -170,7 +170,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
           category: "Business",
           relevance: 87,
           date: "2 days ago",
-          image: "/placeholder.svg?height=100&width=150&text=Economic+Impact",
+          image: "/thumbnail.webp?height=100&width=150&text=Economic+Impact",
         },
         {
           id: 3,
@@ -178,7 +178,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
           category: "Politics",
           relevance: 85,
           date: "3 days ago",
-          image: "/placeholder.svg?height=100&width=150&text=Island+Nations",
+          image: "/thumbnail.webp?height=100&width=150&text=Island+Nations",
         },
         {
           id: 4,
@@ -186,7 +186,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
           category: "Business",
           relevance: 81,
           date: "1 week ago",
-          image: "/placeholder.svg?height=100&width=150&text=Renewable+Energy",
+          image: "/thumbnail.webp?height=100&width=150&text=Renewable+Energy",
         },
         {
           id: 5,
@@ -194,7 +194,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
           category: "Science",
           relevance: 78,
           date: "1 week ago",
-          image: "/placeholder.svg?height=100&width=150&text=Climate+Science",
+          image: "/thumbnail.webp?height=100&width=150&text=Climate+Science",
         },
       ]
 
@@ -434,7 +434,7 @@ export function AiFeatures({ articleTitle, articleContent, className }: AiFeatur
                         <div key={article.id} className="flex gap-3 group">
                           <div className="flex-shrink-0 w-16 h-12 rounded overflow-hidden">
                             <img
-                              src={article.image || "/placeholder.svg"}
+                              src={article.image || "/thumbnail.webp"}
                               alt={article.title}
                               className="object-cover w-full h-full transition-transform group-hover:scale-105 duration-500"
                             />

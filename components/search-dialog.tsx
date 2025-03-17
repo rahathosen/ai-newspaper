@@ -56,7 +56,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         "World leaders from over 190 countries have committed to new climate targets aimed at limiting global warming...",
       date: "2 hours ago",
       category: "news",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/thumbnail.webp?height=100&width=100",
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
       snippet: "The recent climate summit has shown that while progress is being made, more urgent steps are needed...",
       date: "5 hours ago",
       category: "opinion",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/thumbnail.webp?height=100&width=100",
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
       snippet: "Leading technology firms have unveiled plans to become carbon neutral by 2030, with some aiming for...",
       date: "Yesterday",
       category: "technology",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/thumbnail.webp?height=100&width=100",
     },
     {
       id: 4,
@@ -81,7 +81,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         "Stock markets showed mixed reactions to the climate policy announcements, with renewable energy sectors...",
       date: "2 days ago",
       category: "business",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/thumbnail.webp?height=100&width=100",
     },
     {
       id: 5,
@@ -90,7 +90,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         "A new study by climate researchers indicates that polar ice caps are melting at a faster rate than previously...",
       date: "3 days ago",
       category: "news",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/thumbnail.webp?height=100&width=100",
     },
   ]
 
@@ -287,7 +287,7 @@ function SearchResult({ result }: SearchResultProps) {
   return (
     <div className="flex gap-4">
       <div className="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">
-        <img src={result.image || "/placeholder.svg"} alt={result.title} className="w-full h-full object-cover" />
+        <img src={result.image || "/thumbnail.webp"} alt={result.title} className="w-full h-full object-cover" />
       </div>
       <div className="flex-1">
         <div className="flex items-start justify-between">

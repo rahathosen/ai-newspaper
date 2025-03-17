@@ -27,7 +27,7 @@ export default function Home() {
         "The $1.2 trillion infrastructure package includes funding for roads, bridges, public transit, broadband, and more. The bill now moves to the House for consideration.",
       author: "Jennifer Reynolds",
       date: "2 hours ago",
-      image: "/placeholder.svg?height=400&width=600&text=Politics",
+      image: "/thumbnail.webp?height=400&width=600&text=Politics",
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ export default function Home() {
       excerpt: "The speech will outline new initiatives aimed at job creation and inflation control.",
       author: "Michael Chen",
       date: "4 hours ago",
-      image: "/placeholder.svg?height=200&width=300&text=Politics",
+      image: "/thumbnail.webp?height=200&width=300&text=Politics",
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ export default function Home() {
       excerpt: "The case could have far-reaching implications for future elections and voter access.",
       author: "Sarah Johnson",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Politics",
+      image: "/thumbnail.webp?height=200&width=300&text=Politics",
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export default function Home() {
       excerpt: "The bill includes changes to corporate tax rates and new deductions for middle-income families.",
       author: "David Wilson",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Politics",
+      image: "/thumbnail.webp?height=200&width=300&text=Politics",
     },
   ]
 
@@ -63,7 +63,7 @@ export default function Home() {
         "The company plans to build new facilities across five states, creating an estimated 20,000 jobs over the next decade. This marks one of the largest corporate investments in American manufacturing in recent years.",
       author: "Robert Williams",
       date: "3 hours ago",
-      image: "/placeholder.svg?height=400&width=600&text=Business",
+      image: "/thumbnail.webp?height=400&width=600&text=Business",
     },
     {
       id: 2,
@@ -71,7 +71,7 @@ export default function Home() {
       excerpt: "Stock indices reached new highs following positive economic data and central bank statements.",
       author: "Jennifer Lee",
       date: "5 hours ago",
-      image: "/placeholder.svg?height=200&width=300&text=Business",
+      image: "/thumbnail.webp?height=200&width=300&text=Business",
     },
     {
       id: 3,
@@ -79,7 +79,7 @@ export default function Home() {
       excerpt: "Consumer spending has exceeded pre-pandemic levels across most sectors, analysts report.",
       author: "Thomas Brown",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Business",
+      image: "/thumbnail.webp?height=200&width=300&text=Business",
     },
     {
       id: 4,
@@ -87,7 +87,7 @@ export default function Home() {
       excerpt: "The initiative aims to eliminate carbon emissions from operations by 2030.",
       author: "Maria Garcia",
       date: "2 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Business",
+      image: "/thumbnail.webp?height=200&width=300&text=Business",
     },
   ]
 
@@ -99,7 +99,7 @@ export default function Home() {
         "Scientists have developed a new artificial intelligence system that can determine the 3D structure of proteins from their amino acid sequence, potentially revolutionizing drug discovery and biomedical research.",
       author: "Dr. Emily Chen",
       date: "Today",
-      image: "/placeholder.svg?height=400&width=600&text=Technology",
+      image: "/thumbnail.webp?height=400&width=600&text=Technology",
     },
     {
       id: 2,
@@ -107,7 +107,7 @@ export default function Home() {
       excerpt: "Researchers demonstrate a quantum computer solving problems impossible for classical systems.",
       author: "James Wilson",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Technology",
+      image: "/thumbnail.webp?height=200&width=300&text=Technology",
     },
     {
       id: 3,
@@ -115,7 +115,7 @@ export default function Home() {
       excerpt: "The new batteries promise 600 miles of range and can charge to 80% in just 15 minutes.",
       author: "Sophia Rodriguez",
       date: "2 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Technology",
+      image: "/thumbnail.webp?height=200&width=300&text=Technology",
     },
     {
       id: 4,
@@ -123,7 +123,7 @@ export default function Home() {
       excerpt: "The framework aims to give users more control over their personal information.",
       author: "Daniel Kim",
       date: "3 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Technology",
+      image: "/thumbnail.webp?height=200&width=300&text=Technology",
     },
   ]
 
@@ -135,7 +135,7 @@ export default function Home() {
         "In a stunning upset, the team overcame a 15-point deficit in the final quarter to claim their first championship in franchise history. The victory caps an improbable playoff run that has captivated fans nationwide.",
       author: "Marcus Johnson",
       date: "6 hours ago",
-      image: "/placeholder.svg?height=400&width=600&text=Sports",
+      image: "/thumbnail.webp?height=400&width=600&text=Sports",
     },
     {
       id: 2,
@@ -143,7 +143,7 @@ export default function Home() {
       excerpt: "The deal makes them the highest-paid player in the league's history at $45 million per year.",
       author: "Jessica Thompson",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Sports",
+      image: "/thumbnail.webp?height=200&width=300&text=Sports",
     },
     {
       id: 3,
@@ -151,7 +151,7 @@ export default function Home() {
       excerpt: "The additions include cricket, squash, and flag football, expanding the Olympic program.",
       author: "Carlos Mendez",
       date: "2 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Sports",
+      image: "/thumbnail.webp?height=200&width=300&text=Sports",
     },
     {
       id: 4,
@@ -160,7 +160,7 @@ export default function Home() {
         "The Hall of Fame coach leaves behind an incredible legacy with five championships and numerous records.",
       author: "Alex Peterson",
       date: "3 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Sports",
+      image: "/thumbnail.webp?height=200&width=300&text=Sports",
     },
   ]
 
@@ -172,7 +172,7 @@ export default function Home() {
         "Researchers have identified a novel approach that significantly slows cognitive decline in early-stage patients. The clinical trials showed a 42% reduction in disease progression over an 18-month period.",
       author: "Dr. Sarah Johnson",
       date: "Today",
-      image: "/placeholder.svg?height=400&width=600&text=Health",
+      image: "/thumbnail.webp?height=400&width=600&text=Health",
     },
     {
       id: 2,
@@ -180,7 +180,7 @@ export default function Home() {
       excerpt: "The 25-year study followed over 100,000 participants and found significant health benefits.",
       author: "Dr. Michael Rivera",
       date: "Yesterday",
-      image: "/placeholder.svg?height=200&width=300&text=Health",
+      image: "/thumbnail.webp?height=200&width=300&text=Health",
     },
     {
       id: 3,
@@ -188,7 +188,7 @@ export default function Home() {
       excerpt: "The initiative aims to reduce stigma and improve access to mental health resources.",
       author: "Emma Thompson",
       date: "2 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Health",
+      image: "/thumbnail.webp?height=200&width=300&text=Health",
     },
     {
       id: 4,
@@ -196,7 +196,7 @@ export default function Home() {
       excerpt: "Pediatricians update recommendations based on latest research on digital media effects.",
       author: "Dr. James Wilson",
       date: "3 days ago",
-      image: "/placeholder.svg?height=200&width=300&text=Health",
+      image: "/thumbnail.webp?height=200&width=300&text=Health",
     },
   ]
 

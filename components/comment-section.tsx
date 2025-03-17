@@ -35,7 +35,7 @@ export function CommentSection() {
       id: 1,
       author: {
         name: "Sarah Johnson",
-        avatar: "/placeholder.svg?height=40&width=40&text=SJ",
+        avatar: "/thumbnail.webp?height=40&width=40&text=SJ",
         isVerified: true,
         isAuthor: true,
       },
@@ -50,7 +50,7 @@ export function CommentSection() {
           id: 4,
           author: {
             name: "Michael Chen",
-            avatar: "/placeholder.svg?height=40&width=40&text=MC",
+            avatar: "/thumbnail.webp?height=40&width=40&text=MC",
           },
           content:
             "I agree with your assessment. The correlation between policy changes and market reactions was particularly well-documented.",
@@ -64,7 +64,7 @@ export function CommentSection() {
       id: 2,
       author: {
         name: "Robert Williams",
-        avatar: "/placeholder.svg?height=40&width=40&text=RW",
+        avatar: "/thumbnail.webp?height=40&width=40&text=RW",
         isVerified: true,
       },
       content:
@@ -77,7 +77,7 @@ export function CommentSection() {
       id: 3,
       author: {
         name: "Emma Thompson",
-        avatar: "/placeholder.svg?height=40&width=40&text=ET",
+        avatar: "/thumbnail.webp?height=40&width=40&text=ET",
       },
       content:
         "Great reporting as always. The Daily Summary continues to provide the most comprehensive coverage of these complex issues.",
@@ -185,7 +185,7 @@ export function CommentSection() {
       id: Math.max(...comments.map((c) => c.id)) + 1,
       author: {
         name: "You",
-        avatar: "/placeholder.svg?height=40&width=40&text=You",
+        avatar: "/thumbnail.webp?height=40&width=40&text=You",
       },
       content: newComment,
       timestamp: "Just now",
@@ -207,7 +207,7 @@ export function CommentSection() {
             id: Date.now(),
             author: {
               name: "You",
-              avatar: "/placeholder.svg?height=40&width=40&text=You",
+              avatar: "/thumbnail.webp?height=40&width=40&text=You",
             },
             content: replyContent,
             timestamp: "Just now",
@@ -260,7 +260,7 @@ export function CommentSection() {
         <form onSubmit={handleSubmitComment}>
           <div className="flex gap-3">
             <Avatar>
-              <AvatarImage src="/placeholder.svg?height=40&width=40&text=You" alt="Your avatar" />
+              <AvatarImage src="/thumbnail.webp?height=40&width=40&text=You" alt="Your avatar" />
               <AvatarFallback>You</AvatarFallback>
             </Avatar>
             <div className="flex-1">
@@ -363,7 +363,7 @@ export function CommentSection() {
                 {replyingTo === comment.id && (
                   <div className="mt-3 flex gap-3">
                     <Avatar className="h-8 w-8">
-                      <AvatarImage src="/placeholder.svg?height=40&width=40&text=You" alt="Your avatar" />
+                      <AvatarImage src="/thumbnail.webp?height=40&width=40&text=You" alt="Your avatar" />
                       <AvatarFallback>You</AvatarFallback>
                     </Avatar>
                     <div className="flex-1">

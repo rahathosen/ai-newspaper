@@ -17,7 +17,7 @@ export default function ArticlePage() {
       id: 1,
       title: "Global Markets React to Central Bank Policy Shifts",
       category: "Business",
-      image: "/placeholder.svg?height=200&width=300&text=Markets",
+      image: "/thumbnail.webp?height=200&width=300&text=Markets",
       author: "Robert Williams",
       date: "4 hours ago",
     },
@@ -25,7 +25,7 @@ export default function ArticlePage() {
       id: 2,
       title: "Tech Companies Announce Carbon Neutral Initiatives",
       category: "Technology",
-      image: "/placeholder.svg?height=200&width=300&text=Tech",
+      image: "/thumbnail.webp?height=200&width=300&text=Tech",
       author: "Michael Chen",
       date: "Yesterday",
     },
@@ -33,7 +33,7 @@ export default function ArticlePage() {
       id: 3,
       title: "Analysis: How the Housing Market is Shifting in Major Cities",
       category: "Real Estate",
-      image: "/placeholder.svg?height=200&width=300&text=Housing",
+      image: "/thumbnail.webp?height=200&width=300&text=Housing",
       author: "Jennifer Lee",
       date: "2 days ago",
     },
@@ -41,7 +41,7 @@ export default function ArticlePage() {
       id: 4,
       title: "Political Leaders Gather for Climate Summit",
       category: "Politics",
-      image: "/placeholder.svg?height=200&width=300&text=Climate",
+      image: "/thumbnail.webp?height=200&width=300&text=Climate",
       author: "David Rodriguez",
       date: "3 days ago",
     },
@@ -76,7 +76,7 @@ export default function ArticlePage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Avatar>
-                      <AvatarImage src="/placeholder.svg?height=40&width=40&text=SJ" alt="Sarah Johnson" />
+                      <AvatarImage src="/thumbnail.webp?height=40&width=40&text=SJ" alt="Sarah Johnson" />
                       <AvatarFallback>SJ</AvatarFallback>
                     </Avatar>
                     <div>
@@ -123,7 +123,7 @@ export default function ArticlePage() {
               {/* Featured Image */}
               <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-6">
                 <img
-                  src="/placeholder.svg?height=600&width=1200&text=Climate+Summit"
+                  src="/thumbnail.webp?height=600&width=1200&text=Climate+Summit"
                   alt="Global Climate Summit"
                   className="object-cover w-full h-full"
                 />

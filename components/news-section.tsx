@@ -79,7 +79,7 @@ function FeaturedNewsArticle({ article }: { article: Article }) {
     <article className="group">
       <div className="relative aspect-[16/9] overflow-hidden rounded-md mb-3">
         <img
-          src={article.image || "/placeholder.svg"}
+          src={article.image || "/thumbnail.webp"}
           alt={article.title}
           className="object-cover w-full h-full transition-transform group-hover:scale-105 duration-500"
         />
@@ -127,7 +127,7 @@ function SecondaryNewsArticle({ article }: { article: Article }) {
     <article className="flex gap-3 group">
       <div className="flex-shrink-0 w-24 h-16 rounded overflow-hidden">
         <img
-          src={article.image || "/placeholder.svg"}
+          src={article.image || "/thumbnail.webp"}
           alt={article.title}
           className="object-cover w-full h-full transition-transform group-hover:scale-105 duration-500"
         />

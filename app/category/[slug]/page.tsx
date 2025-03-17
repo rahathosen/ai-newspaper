@@ -36,7 +36,7 @@ const categories = {
     description: "Latest political news, analysis, and commentary on Bangladesh and international politics.",
     subcategories: ["National Politics", "International Relations", "Government", "Elections"],
     articleCount: 128,
-    featuredImage: "/placeholder.svg?height=400&width=800",
+    featuredImage: "/thumbnail.webp?height=400&width=800",
   },
   business: {
     name: "Business",
@@ -44,14 +44,14 @@ const categories = {
       "Business news, market updates, economic analysis, and corporate developments in Bangladesh and beyond.",
     subcategories: ["Economy", "Markets", "Companies", "Startups", "Trade"],
     articleCount: 96,
-    featuredImage: "/placeholder.svg?height=400&width=800",
+    featuredImage: "/thumbnail.webp?height=400&width=800",
   },
   technology: {
     name: "Technology",
     description: "Latest technology news, innovations, digital trends, and tech industry developments.",
     subcategories: ["Digital Bangladesh", "Startups", "Gadgets", "Internet", "Innovation"],
     articleCount: 84,
-    featuredImage: "/placeholder.svg?height=400&width=800",
+    featuredImage: "/thumbnail.webp?height=400&width=800",
   },
 }
 
@@ -68,7 +68,7 @@ const mockArticles = [
     date: "March 15, 2025",
     readTime: "8 min read",
     views: 4582,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Digital Economy", "Government", "Technology Policy"],
     division: "Dhaka",
     district: "Dhaka",
@@ -84,7 +84,7 @@ const mockArticles = [
     date: "March 14, 2025",
     readTime: "6 min read",
     views: 3241,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Climate Change", "Legislation", "Environment"],
     division: "Dhaka",
     district: "Dhaka",
@@ -100,7 +100,7 @@ const mockArticles = [
     date: "March 13, 2025",
     readTime: "5 min read",
     views: 2876,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Elections", "Opposition", "Electoral Reform"],
     division: "Dhaka",
     district: "Dhaka",
@@ -116,7 +116,7 @@ const mockArticles = [
     date: "March 12, 2025",
     readTime: "7 min read",
     views: 3542,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Trade", "European Union", "International Relations"],
     division: "Dhaka",
     district: "Dhaka",
@@ -132,7 +132,7 @@ const mockArticles = [
     date: "March 11, 2025",
     readTime: "6 min read",
     views: 2987,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Infrastructure", "Development", "Chittagong"],
     division: "Chittagong",
     district: "Chittagong",
@@ -148,7 +148,7 @@ const mockArticles = [
     date: "March 10, 2025",
     readTime: "5 min read",
     views: 2345,
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/thumbnail.webp?height=300&width=500",
     tags: ["Digital Security", "Cybersecurity", "Policy"],
     division: "Dhaka",
     district: "Dhaka",
@@ -243,7 +243,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
       <div className="relative rounded-lg overflow-hidden mb-8">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40">
           <img
-            src={category.featuredImage || "/placeholder.svg"}
+            src={category.featuredImage || "/thumbnail.webp"}
             alt={category.name}
             className="w-full h-full object-cover mix-blend-overlay"
           />
@@ -343,7 +343,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                 <div className="md:col-span-1">
                   <div className="relative h-48 md:h-full">
                     <img
-                      src={article.image || "/placeholder.svg"}
+                      src={article.image || "/thumbnail.webp"}
                       alt={article.title}
                       className="w-full h-full object-cover"
                     />
@@ -480,7 +480,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                   <div className="relative h-32">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60">
                       <img
-                        src={cat.featuredImage || "/placeholder.svg"}
+                        src={cat.featuredImage || "/thumbnail.webp"}
                         alt={cat.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />

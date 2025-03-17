@@ -46,7 +46,7 @@ const mediaItems = [
     id: "1",
     type: "image",
     title: "Climate Summit Photo",
-    url: "/placeholder.svg?height=600&width=1200&text=Climate+Summit",
+    url: "/thumbnail.webp?height=600&width=1200&text=Climate+Summit",
     size: "245 KB",
     dimensions: "1200 x 600",
     uploadedBy: "Sarah Johnson",
@@ -56,7 +56,7 @@ const mediaItems = [
     id: "2",
     type: "image",
     title: "Tech Conference",
-    url: "/placeholder.svg?height=600&width=1200&text=Tech+Conference",
+    url: "/thumbnail.webp?height=600&width=1200&text=Tech+Conference",
     size: "320 KB",
     dimensions: "1200 x 600",
     uploadedBy: "Michael Chen",
@@ -66,7 +66,7 @@ const mediaItems = [
     id: "3",
     type: "image",
     title: "Business Meeting",
-    url: "/placeholder.svg?height=600&width=1200&text=Business+Meeting",
+    url: "/thumbnail.webp?height=600&width=1200&text=Business+Meeting",
     size: "180 KB",
     dimensions: "1200 x 600",
     uploadedBy: "Robert Williams",
@@ -254,7 +254,7 @@ export function MediaLibrary() {
             >
               <div className="relative aspect-square bg-muted">
                 {item.type === "image" ? (
-                  <img src={item.url || "/placeholder.svg"} alt={item.title} className="w-full h-full object-cover" />
+                  <img src={item.url || "/thumbnail.webp"} alt={item.title} className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">{getIconForType(item.type)}</div>
                 )}
@@ -347,7 +347,7 @@ export function MediaLibrary() {
                           <div className="h-10 w-10 rounded bg-muted flex items-center justify-center overflow-hidden">
                             {item.type === "image" ? (
                               <img
-                                src={item.url || "/placeholder.svg"}
+                                src={item.url || "/thumbnail.webp"}
                                 alt={item.title}
                                 className="h-full w-full object-cover"
                               />

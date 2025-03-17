@@ -65,7 +65,7 @@ function TodaysPaper() {
       </div>
       <div className="aspect-[3/4] bg-muted rounded-md overflow-hidden relative mb-3">
         <img
-          src="/placeholder.svg?height=400&width=300&text=Front Page"
+          src="/thumbnail.webp?height=400&width=300&text=Front Page"
           alt="Today's Front Page"
           className="w-full h-full object-cover"
         />
