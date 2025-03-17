@@ -38,7 +38,7 @@ const subcategories = {
     parentCategory: "Politics",
     parentSlug: "politics",
     articleCount: 56,
-    featuredImage: "/thumbnail.webp?height=400&width=800",
+    featuredImage: "/thumbnail.jpg?height=400&width=800",
   },
   "international-relations": {
     name: "International Relations",
@@ -47,7 +47,7 @@ const subcategories = {
     parentCategory: "Politics",
     parentSlug: "politics",
     articleCount: 42,
-    featuredImage: "/thumbnail.webp?height=400&width=800",
+    featuredImage: "/thumbnail.jpg?height=400&width=800",
   },
   economy: {
     name: "Economy",
@@ -55,7 +55,7 @@ const subcategories = {
     parentCategory: "Business",
     parentSlug: "business",
     articleCount: 38,
-    featuredImage: "/thumbnail.webp?height=400&width=800",
+    featuredImage: "/thumbnail.jpg?height=400&width=800",
   },
 }
 
@@ -72,7 +72,7 @@ const mockArticles = [
     date: "March 15, 2025",
     readTime: "7 min read",
     views: 3582,
-    image: "/thumbnail.webp?height=300&width=500",
+    image: "/thumbnail.jpg?height=300&width=500",
     tags: ["Budget", "Parliament", "Digital Infrastructure"],
     division: "Dhaka",
     district: "Dhaka",
@@ -88,7 +88,7 @@ const mockArticles = [
     date: "March 14, 2025",
     readTime: "6 min read",
     views: 2841,
-    image: "/thumbnail.webp?height=300&width=500",
+    image: "/thumbnail.jpg?height=300&width=500",
     tags: ["Local Elections", "Political Parties", "Campaign"],
     division: "Dhaka",
     district: "Dhaka",
@@ -104,7 +104,7 @@ const mockArticles = [
     date: "March 13, 2025",
     readTime: "8 min read",
     views: 3176,
-    image: "/thumbnail.webp?height=300&width=500",
+    image: "/thumbnail.jpg?height=300&width=500",
     tags: ["Constitution", "Parliament", "Judicial Reform"],
     division: "Dhaka",
     district: "Dhaka",
@@ -120,7 +120,7 @@ const mockArticles = [
     date: "March 12, 2025",
     readTime: "5 min read",
     views: 2542,
-    image: "/thumbnail.webp?height=300&width=500",
+    image: "/thumbnail.jpg?height=300&width=500",
     tags: ["Independence Day", "National Unity", "Political Leaders"],
     division: "Dhaka",
     district: "Dhaka",
@@ -136,7 +136,7 @@ const mockArticles = [
     date: "March 11, 2025",
     readTime: "6 min read",
     views: 2187,
-    image: "/thumbnail.webp?height=300&width=500",
+    image: "/thumbnail.jpg?height=300&width=500",
     tags: ["Rural Development", "Government Initiative", "Infrastructure"],
     division: "Dhaka",
     district: "Dhaka",
@@ -243,7 +243,7 @@ export default function SubcategoryPage({ params }: { params: { slug: string } }
       <div className="relative rounded-lg overflow-hidden mb-8">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40">
           <img
-            src={subcategory.featuredImage || "/thumbnail.webp"}
+            src={subcategory.featuredImage || "/thumbnail.jpg"}
             alt={subcategory.name}
             className="w-full h-full object-cover mix-blend-overlay"
           />
@@ -347,7 +347,7 @@ export default function SubcategoryPage({ params }: { params: { slug: string } }
                 <div className="md:col-span-1">
                   <div className="relative h-48 md:h-full">
                     <img
-                      src={article.image || "/thumbnail.webp"}
+                      src={article.image || "/thumbnail.jpg"}
                       alt={article.title}
                       className="w-full h-full object-cover"
                     />
@@ -484,7 +484,7 @@ export default function SubcategoryPage({ params }: { params: { slug: string } }
                   <div className="relative h-32">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60">
                       <img
-                        src={subcat.featuredImage || "/thumbnail.webp"}
+                        src={subcat.featuredImage || "/thumbnail.jpg"}
                         alt={subcat.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />

@@ -32,7 +32,7 @@ export function RelatedArticles({ articles, title = "Related Articles" }: Relate
               <div className="flex gap-3">
                 <div className="flex-shrink-0 w-20 h-16 rounded overflow-hidden">
                   <img
-                    src={article.image || "/thumbnail.webp"}
+                    src={article.image || "/thumbnail.jpg"}
                     alt={article.title}
                     className="object-cover w-full h-full"
                   />

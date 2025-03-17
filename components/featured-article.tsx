@@ -23,7 +23,7 @@ export function FeaturedArticle() {
           <Badge className="absolute top-3 left-3 z-10">FEATURED</Badge>
           <div className="relative aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/thumbnail.webp?height=600&width=1200"
+              src="/thumbnail.jpg?height=600&width=1200"
               alt="Global leaders at climate summit"
               className="object-cover w-full h-full transition-transform hover:scale-105 duration-500"
             />
@@ -214,7 +214,7 @@ function SecondaryArticle({ title, author, readTime, summary, tags, comments }: 
     <article className="space-y-3">
       <div className="relative aspect-[16/9] overflow-hidden rounded-md">
         <img
-          src="/thumbnail.webp?height=400&width=600"
+          src="/thumbnail.jpg?height=400&width=600"
           alt={title}
           className="object-cover w-full h-full transition-transform hover:scale-105 duration-500"
         />

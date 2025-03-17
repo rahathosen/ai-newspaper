@@ -24,7 +24,7 @@ export default function CareersPage() {
 
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-12">
           <Image
-            src="/thumbnail.webp?height=800&width=1600"
+            src="/thumbnail.jpg?height=800&width=1600"
             alt="The Daily Summary team"
             fill
             className="object-cover"

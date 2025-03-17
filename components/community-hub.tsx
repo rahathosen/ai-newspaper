@@ -120,7 +120,7 @@ export function CommunityHub() {
                 title="What do you think about the new climate policy announced yesterday?"
                 author={{
                   name: "Sarah Johnson",
-                  avatar: "/thumbnail.webp?height=40&width=40&text=SJ",
+                  avatar: "/thumbnail.jpg?height=40&width=40&text=SJ",
                   badge: "Verified",
                 }}
                 category="Politics"
@@ -137,7 +137,7 @@ export function CommunityHub() {
                 title="Tech companies' new AI ethics guidelines - sufficient or just PR?"
                 author={{
                   name: "Michael Chen",
-                  avatar: "/thumbnail.webp?height=40&width=40&text=MC",
+                  avatar: "/thumbnail.jpg?height=40&width=40&text=MC",
                   badge: "Expert",
                 }}
                 category="Technology"
@@ -152,7 +152,7 @@ export function CommunityHub() {
                 title="How will rising interest rates affect the housing market in your area?"
                 author={{
                   name: "Jennifer Lee",
-                  avatar: "/thumbnail.webp?height=40&width=40&text=JL",
+                  avatar: "/thumbnail.jpg?height=40&width=40&text=JL",
                 }}
                 category="Business"
                 timestamp="Yesterday"
@@ -166,7 +166,7 @@ export function CommunityHub() {
                 title="Controversial call in last night's championship game - fair or foul?"
                 author={{
                   name: "Marcus Johnson",
-                  avatar: "/thumbnail.webp?height=40&width=40&text=MJ",
+                  avatar: "/thumbnail.jpg?height=40&width=40&text=MJ",
                   badge: "Top Contributor",
                 }}
                 category="Sports"
@@ -183,7 +183,7 @@ export function CommunityHub() {
                 title="New study on intermittent fasting - have you tried it?"
                 author={{
                   name: "Dr. Emma Thompson",
-                  avatar: "/thumbnail.webp?height=40&width=40&text=ET",
+                  avatar: "/thumbnail.jpg?height=40&width=40&text=ET",
                   badge: "Health Expert",
                 }}
                 category="Health"
@@ -253,34 +253,34 @@ export function CommunityHub() {
                     {
                       rank: 1,
                       name: "Sarah Johnson",
-                      avatar: "/thumbnail.webp?height=40&width=40&text=SJ",
+                      avatar: "/thumbnail.jpg?height=40&width=40&text=SJ",
                       points: 1250,
                       badge: "Expert",
                     },
                     {
                       rank: 2,
                       name: "Michael Chen",
-                      avatar: "/thumbnail.webp?height=40&width=40&text=MC",
+                      avatar: "/thumbnail.jpg?height=40&width=40&text=MC",
                       points: 1120,
                       badge: "Verified",
                     },
                     {
                       rank: 3,
                       name: "Robert Williams",
-                      avatar: "/thumbnail.webp?height=40&width=40&text=RW",
+                      avatar: "/thumbnail.jpg?height=40&width=40&text=RW",
                       points: 980,
                     },
                     {
                       rank: 4,
                       name: "Emma Thompson",
-                      avatar: "/thumbnail.webp?height=40&width=40&text=ET",
+                      avatar: "/thumbnail.jpg?height=40&width=40&text=ET",
                       points: 875,
                       badge: "Health Expert",
                     },
                     {
                       rank: 5,
                       name: "David Rodriguez",
-                      avatar: "/thumbnail.webp?height=40&width=40&text=DR",
+                      avatar: "/thumbnail.jpg?height=40&width=40&text=DR",
                       points: 820,
                     },
                   ].map((user) => (
@@ -324,7 +324,7 @@ export function CommunityHub() {
                         42
                       </div>
                       <Avatar>
-                        <AvatarImage src="/thumbnail.webp?height=40&width=40&text=You" alt="Your avatar" />
+                        <AvatarImage src="/thumbnail.jpg?height=40&width=40&text=You" alt="Your avatar" />
                         <AvatarFallback>You</AvatarFallback>
                       </Avatar>
                       <div>
@@ -493,7 +493,7 @@ function UserMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="/thumbnail.webp?height=40&width=40&text=You" alt="Your avatar" />
+            <AvatarImage src="/thumbnail.jpg?height=40&width=40&text=You" alt="Your avatar" />
             <AvatarFallback>You</AvatarFallback>
           </Avatar>
         </Button>
@@ -641,7 +641,7 @@ function TrendingTopic({ title, postCount, activity, categories, isHot }: Trendi
           <div className="flex -space-x-2">
             {[1, 2, 3, 4].map((i) => (
               <Avatar key={i} className="h-6 w-6 border-2 border-background">
-                <AvatarImage src={`/thumbnail.webp?height=30&width=30&text=${i}`} />
+                <AvatarImage src={`/thumbnail.jpg?height=30&width=30&text=${i}`} />
                 <AvatarFallback>{i}</AvatarFallback>
               </Avatar>
             ))}

@@ -23,7 +23,7 @@ export default function AdvertisePage() {
 
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-12">
           <Image
-            src="/thumbnail.webp?height=800&width=1600"
+            src="/thumbnail.jpg?height=800&width=1600"
             alt="Advertising with The Daily Summary"
             fill
             className="object-cover"
@@ -418,30 +418,30 @@ export default function AdvertisePage() {
                 title: "Financial Services Leader",
                 description:
                   "A major financial institution partnered with us on a content series about personal finance, resulting in 45,000+ engaged readers and a 23% increase in brand consideration.",
-                image: "/thumbnail.webp?height=600&width=800",
+                image: "/thumbnail.jpg?height=600&width=800",
               },
               {
                 title: "Technology Innovator",
                 description:
                   "A leading tech company sponsored our annual innovation summit, generating 3,500+ qualified leads and establishing thought leadership in their industry vertical.",
-                image: "/thumbnail.webp?height=600&width=800",
+                image: "/thumbnail.jpg?height=600&width=800",
               },
               {
                 title: "Luxury Automotive Brand",
                 description:
                   "An interactive sponsored content campaign for a luxury car manufacturer drove 12,000+ high-intent visitors to their website and contributed to a 15% lift in test drives.",
-                image: "/thumbnail.webp?height=600&width=800",
+                image: "/thumbnail.jpg?height=600&width=800",
               },
               {
                 title: "Healthcare Provider",
                 description:
                   "A regional healthcare network's print and digital campaign reached 500,000+ readers in their target market, increasing appointment bookings by 18%.",
-                image: "/thumbnail.webp?height=600&width=800",
+                image: "/thumbnail.jpg?height=600&width=800",
               },
             ].map((study) => (
               <Card key={study.title} className="overflow-hidden">
                 <div className="relative h-48">
-                  <Image src={study.image || "/thumbnail.webp"} alt={study.title} fill className="object-cover" />
+                  <Image src={study.image || "/thumbnail.jpg"} alt={study.title} fill className="object-cover" />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="font-serif text-xl font-bold text-primary mb-2">{study.title}</h3>

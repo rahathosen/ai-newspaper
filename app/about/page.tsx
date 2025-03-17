@@ -15,7 +15,7 @@ export default function AboutPage() {
 
         <div className="relative w-full h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden">
           <Image
-            src="/thumbnail.webp?height=800&width=1200"
+            src="/thumbnail.jpg?height=800&width=1200"
             alt="The Daily Summary headquarters"
             fill
             className="object-cover"
@@ -78,30 +78,30 @@ export default function AboutPage() {
                 name: "Alexandra Chen",
                 title: "Editor-in-Chief",
                 bio: "With over 25 years of experience in journalism, Alexandra leads our editorial vision and strategy.",
-                image: "/thumbnail.webp?height=400&width=400",
+                image: "/thumbnail.jpg?height=400&width=400",
               },
               {
                 name: "Marcus Johnson",
                 title: "Managing Editor",
                 bio: "Marcus oversees our daily operations and ensures the highest standards of reporting across all sections.",
-                image: "/thumbnail.webp?height=400&width=400",
+                image: "/thumbnail.jpg?height=400&width=400",
               },
               {
                 name: "Sophia Rodriguez",
                 title: "Digital Director",
                 bio: "Sophia leads our digital transformation and multimedia initiatives.",
-                image: "/thumbnail.webp?height=400&width=400",
+                image: "/thumbnail.jpg?height=400&width=400",
               },
               {
                 name: "David Kim",
                 title: "Chief Technology Officer",
                 bio: "David drives our technological innovation and digital infrastructure.",
-                image: "/thumbnail.webp?height=400&width=400",
+                image: "/thumbnail.jpg?height=400&width=400",
               },
             ].map((person) => (
               <div key={person.name} className="flex items-start space-x-4">
                 <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                  <Image src={person.image || "/thumbnail.webp"} alt={person.name} fill className="object-cover" />
+                  <Image src={person.image || "/thumbnail.jpg"} alt={person.name} fill className="object-cover" />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold text-primary">{person.name}</h3>

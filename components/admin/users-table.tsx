@@ -27,7 +27,7 @@ const users = [
     role: "admin",
     status: "active",
     lastActive: "Today, 10:23 AM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=SJ",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=SJ",
   },
   {
     id: "2",
@@ -36,7 +36,7 @@ const users = [
     role: "editor",
     status: "active",
     lastActive: "Today, 9:41 AM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=MC",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=MC",
   },
   {
     id: "3",
@@ -45,7 +45,7 @@ const users = [
     role: "author",
     status: "active",
     lastActive: "Yesterday, 4:52 PM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=RW",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=RW",
   },
   {
     id: "4",
@@ -54,7 +54,7 @@ const users = [
     role: "author",
     status: "active",
     lastActive: "Yesterday, 2:15 PM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=ET",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=ET",
   },
   {
     id: "5",
@@ -63,7 +63,7 @@ const users = [
     role: "author",
     status: "active",
     lastActive: "Mar 14, 2025",
-    avatar: "/thumbnail.webp?height=40&width=40&text=MJ",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=MJ",
   },
   {
     id: "6",
@@ -72,7 +72,7 @@ const users = [
     role: "editor",
     status: "inactive",
     lastActive: "Mar 10, 2025",
-    avatar: "/thumbnail.webp?height=40&width=40&text=JL",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=JL",
   },
   {
     id: "7",
@@ -81,7 +81,7 @@ const users = [
     role: "subscriber",
     status: "active",
     lastActive: "Today, 11:32 AM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=DW",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=DW",
   },
   {
     id: "8",
@@ -90,7 +90,7 @@ const users = [
     role: "subscriber",
     status: "active",
     lastActive: "Mar 13, 2025",
-    avatar: "/thumbnail.webp?height=40&width=40&text=JA",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=JA",
   },
   {
     id: "9",
@@ -99,7 +99,7 @@ const users = [
     role: "subscriber",
     status: "active",
     lastActive: "Mar 12, 2025",
-    avatar: "/thumbnail.webp?height=40&width=40&text=AK",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=AK",
   },
   {
     id: "10",
@@ -108,7 +108,7 @@ const users = [
     role: "admin",
     status: "active",
     lastActive: "Today, 8:15 AM",
-    avatar: "/thumbnail.webp?height=40&width=40&text=LG",
+    avatar: "/thumbnail.jpg?height=40&width=40&text=LG",
   },
 ]
 

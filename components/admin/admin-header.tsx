@@ -56,7 +56,7 @@ export function AdminHeader() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="/thumbnail.webp?height=32&width=32&text=JD" alt="John Doe" />
+                  <AvatarImage src="/thumbnail.jpg?height=32&width=32&text=JD" alt="John Doe" />
                   <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
               </Button>
